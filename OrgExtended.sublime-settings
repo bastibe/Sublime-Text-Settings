@@ -1,0 +1,6 @@
+// These settings override both User and Default settings for the OrgExtended syntax
+{
+	"color_scheme": "Packages/User/EInk.sublime-color-scheme",
+	"auto_complete": false,
+	"enableTableExtensions": true,
+}

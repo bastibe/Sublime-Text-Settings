@@ -1,0 +1,15 @@
+[
+	{"keys": ["ctrl+alt+j"], "command": "org_journal_open_today"},
+	{"keys": ["alt+j", "alt+s"], "command": "org_journal_search"},
+	{
+		"keys": ["alt+j", "alt+n"], 
+		"command": "org_journal_open_next",
+		"context": [{"key": "eol_selector", "operator": "equal", "operand": "text.orgmode"}],
+	},
+	{
+		"keys": ["alt+j", "alt+p"], 
+		"command": "org_journal_open_previous",
+		"context": [{"key": "eol_selector", "operator": "equal", "operand": "text.orgmode"}],
+	},
+	{"keys": ["alt+`"], "command": "toggle_terminus_panel"},
+]

@@ -1,0 +1,211 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+	"name": "E-Ink",
+	"author": "Bastian Bechtold",
+	"variables":
+	{
+		"blue": "hsl(210, 50%, 60%)",
+        "blue-vibrant": "hsl(210, 60%, 60%)",
+        "blue2": "hsl(180, 36%, 54%)",
+        "green": "hsl(114, 31%, 60%)",
+        "grey": "hsl(0, 0%, 73%)",
+        "grey2": "hsl(0, 0%, 60%)",
+        "grey3": "hsl(0, 0%, 20%)",
+        "orange": "hsl(32, 93%, 66%)",
+        "orange2": "hsl(32, 85%, 55%)",
+        "orange3": "hsl(40, 94%, 68%)",
+        "pink": "hsl(300, 30%, 68%)",
+        "red": "hsl(357, 79%, 65%)",
+        "red2": "hsl(13, 93%, 66%)",
+        "red3": "hsl(16, 29%, 54%)",
+        "white": "hsl(0, 0%, 97%)",
+        "white2": "hsl(210, 11%, 85%)",
+        "white3": "hsla(204, 10%, 86%, 0.7)",
+        "white4": "hsl(195, 11%, 93%)",
+        "white5": "hsl(180, 9%, 99%)",
+        "bg-white": "#FAFAFA",
+        "bg-string": "#F8F8F8",
+        "fg-black": "#040404",
+        // comments and strings look very similar, so tint them slightly diffently:
+        "fg-comment": "#556",
+        "fg-string": "#877",
+	},
+    "globals":
+    {
+        "foreground": "var(fg-black)",
+        "background": "var(bg-white)",
+        "accent": "var(blue-vibrant)",
+        "caret": "var(blue2)",
+        "block_caret": "color(var(white3) a(0.5))",
+        "line_highlight": "var(white3)",
+        "selection": "var(white3)",
+        "selection_border": "var(white2)",
+        "inactive_selection": "var(white4)",
+        "misspelling": "var(red)",
+        "shadow": "var(grey)",
+        "active_guide": "var(blue2)",
+        "stack_guide": "color(var(blue2) alpha(0.5))",
+        "highlight": "var(blue2)",
+        "find_highlight_foreground": "var(grey3)",
+        "find_highlight": "var(orange3)",
+        "brackets_options": "underline",
+        "brackets_foreground": "var(orange)",
+        "bracket_contents_options": "underline",
+        "bracket_contents_foreground": "var(blue2)",
+        "tags_options": "stippled_underline",
+        "tags_foreground": "var(pink)"
+    },
+    "rules":
+    [
+        {
+            "name": "Comment",
+            "scope": "comment",
+            "foreground": "var(fg-comment)",
+            "font_style": "italic",
+        },
+        {
+            "name": "Comment",
+            "scope": "comment.block.documentation",
+            "foreground": "var(fg-comment)",
+            "font_style": "",
+        },
+        {
+            "name": "String",
+            "scope": "string",
+            "foreground": "var(fg-string)",
+            "background": "var(bg-string)",
+        },
+        {
+            "name": "C include",
+            "scope": "meta.preprocessor.include.c string",
+            "font_style": "italic",
+        },
+        {
+            "name": "Keyword",
+            "scope": "keyword",
+            "font_style": "bold"
+        },
+        {
+            "name": "Constant",
+            "scope": "constant",
+            "font_style": "italic"
+        },
+        {
+            "name": "Entity",
+            "scope": "entity - entity.name",
+            "font_style": "italic"
+        },
+        {
+            "name": "Entity Name",
+            "scope": "entity.name - entity.name.section",
+            "font_style": "italic underline"
+        },
+        {
+            "name": "Org Headline",
+            "scope": "orgmode.headline, orgmode.headline2",
+            "foreground": "var(fg-black)",
+            "font_style": "bold"
+        },
+        {
+        	"name": "Org Hidden Stars",
+        	"scope": "orgmode.preamble",
+        	"foreground": "var(bg-white)"
+        },
+        {
+            "name": "markup headings",
+            "scope": "markup.heading",
+            "font_style": "bold"
+        },
+        {
+            "name": "markup heading beginnings",
+            "scope": "markup.heading punctuation.definition",
+            "font_style": "",
+            "foreground": "var(fg-string)"
+        },
+        {
+            "name": "markup links",
+            "scope": "string.other.link, markup.underline.link",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "markup bold",
+            "scope": "markup.bold",
+            "font_style": "bold"
+        },
+        {
+            "name": "markup italic",
+            "scope": "markup.italic",
+            "font_style": "italic"
+        },
+        {
+            "name": "markup underline",
+            "scope": "markup.underline",
+            "font_style": "underline"
+        },
+        {
+            "name": "markup bold/italic",
+            "scope": "markup.italic markup.bold | markup.bold markup.italic",
+            "font_style": "bold italic"
+        },
+        {
+            "name": "markup bold/underline",
+            "scope": "markup.underline markup.bold | markup.bold markup.underline",
+            "font_style": "bold underline"
+        },
+        {
+            "name": "markup italic/underline",
+            "scope": "markup.underline markup.italic | markup.italic markup.underline",
+            "font_style": "italic underline"
+        },
+        {
+            "name": "markup bold/italic/underline",
+            "scope": "markup.bold markup.italic markup.underline | markup.bold markup.underline markup.italic | markup.italic markup.bold markup.underline | markup.italic markup.underline markup.bold | markup.underline markup.bold markup.italic | markup.underline markup.italic markup.bold",
+            "font_style": "bold italic underline"
+        },
+        {
+            "name": "diff.header",
+            "scope": "meta.diff, meta.diff.header",
+            "foreground": "var(pink)"
+        },
+        {
+            "name": "diff.deleted",
+            "scope": "markup.deleted",
+            "foreground": "var(red)"
+        },
+        {
+            "name": "diff.inserted",
+            "scope": "markup.inserted",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "diff.changed",
+            "scope": "markup.changed",
+            "foreground": "var(orange)"
+        },
+        {
+            "scope": "message.error",
+            "foreground": "var(red)"
+        },
+
+        {
+            "scope": "diff.deleted",
+            "background": "hsl(0, 60%, 93%)",
+            "foreground_adjust": "l(- 20%)"
+        },
+        {
+            "scope": "diff.deleted.char",
+            "background": "hsl(0, 60%, 85%)",
+            "foreground_adjust": "l(- 30%)"
+        },
+        {
+            "scope": "diff.inserted",
+            "background": "hsl(114, 60%, 93%)",
+            "foreground_adjust": "l(- 20%)"
+        },
+        {
+            "scope": "diff.inserted.char",
+            "background": "hsl(114, 60%, 85%)",
+            "foreground_adjust": "l(- 30%)"
+        },
+    ]
+}

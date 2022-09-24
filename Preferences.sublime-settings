@@ -1,0 +1,18 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"hardware_acceleration": "opengl",
+	"theme": "Default.sublime-theme",
+	"color_scheme": "EInk.sublime-color-scheme",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"font_face": "Iosevka Slab",
+	"font_options": ["no_calt"],
+	"translate_tabs_to_spaces": true,
+	"indent_to_bracket": true,
+	"auto_match_enabled": false,
+	"trim_trailing_white_space_on_save": "all",
+	"default_line_ending": "unix",
+}

@@ -1,0 +1,15 @@
+{
+    "default_config": {
+        "windows": "WSL fish"
+    },
+    "256color": true,
+    "shell_configs": [
+        {
+            "name": "WSL fish",
+            "cmd": ["wsl.exe", "--", "fish"],
+            "env": {},
+            "enable": true,
+            "platforms": ["windows"],
+        }
+    ],
+}
