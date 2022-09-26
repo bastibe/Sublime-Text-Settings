@@ -3,6 +3,7 @@ import sublime_plugin
 import datetime
 import time
 import os
+import re
 
 
 journaldir = "C:\\Users\\btd\\Documents\\Journal\\"
@@ -16,7 +17,55 @@ class OrgJournalOpenTodayCommand(sublime_plugin.WindowCommand):
         if not os.path.exists(path):
             with open(path, 'wt') as file:
                 file.write(datetime.date.today().strftime("* %A, %Y-%m-%d\n"))
+            carryover_previous(path)
         journal_entry = self.window.open_file(path)
+
+
+def carryover_previous(targetfile):
+    """Move all TODO entries from the previous entry to a target entry"""
+
+    all_entries = all_journal_entries()
+    target_index = all_entries.index(os.path.abspath(targetfile))
+    if target_index == 0:
+        return  # target is first index, nothing to do
+
+    # cache source file
+    sourcefile = all_entries[target_index-1]
+    with open(sourcefile, 'rt') as source:
+        sourcelines = source.read().splitlines()
+
+    # copy lines from source file into either source or target file:
+    carryover_active = False
+    carryover_level = None
+    with open(sourcefile, 'wt') as source:
+        with open(targetfile, 'at') as target:
+            for line in sourcelines:
+                # determine whether line should stay or carry over
+
+                # a headline starts with asterisks, followed by a headline text:
+                match = re.match('^\s*(?P<asterisks>\*)+\s+(?P<headline>.*)', line)
+                if match:  # headlines may change carryover_active:
+                    headline_level = len(match.group('asterisks'))
+                    is_todo = match.group('headline').startswith('TODO')
+                    if not carryover_active:
+                        if is_todo:  # activate carryover:
+                            carryover_active = True
+                            carryover_level = headline_level
+                    else:
+                        if headline_level <= carryover_level:
+                            if is_todo:  # carryover remains active, but change level:
+                                carryover_active = True
+                                carryover_level = headline_level
+                            else:  # deactivate carryover:
+                                carryover_active = False
+                                carryover_level = None
+
+                # write carryover lines to target, all other lines to source:
+                if carryover_active:
+                    target.write(line + '\n')
+                else:
+                    source.write(line + '\n')
+
 
 
 def all_journal_entries():
