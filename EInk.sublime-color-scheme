@@ -25,6 +25,8 @@
         "white5": "hsl(180, 9%, 99%)",
         "bg-white": "#FAFAFA",
         "bg-string": "#F8F8F8",
+        "bg-todo": "#FFF6F0",
+        "bg-done": "#F6FFF0",
         "fg-black": "#040404",
         // comments and strings look very similar, so tint them slightly diffently:
         "fg-comment": "#556",
@@ -110,6 +112,22 @@
         	"name": "Org Hidden Stars",
         	"scope": "orgmode.preamble",
         	"foreground": "var(bg-white)"
+        },
+        {
+            "name": "Org todo state",
+            "scope": "orgmode.state",
+            "foreground": "var(fg-comment)",
+            "font_style": "",
+        },
+        {
+            "name": "Org todo todo",
+            "scope": "orgmode.state.todo",
+            "background": "var(bg-todo)",
+        },
+        {
+            "name": "Org todo done",
+            "scope": "orgmode.state.done",
+            "background": "var(bg-done)",
         },
         {
             "name": "markup headings",
