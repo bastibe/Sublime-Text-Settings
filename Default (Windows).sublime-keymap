@@ -1,4 +1,5 @@
 [
+	{"keys": ["ctrl+y"], "command": "undo"},  // make undo work on the German keyboard
 	{"keys": ["ctrl+alt+j"], "command": "org_journal_open_today"},
 	{"keys": ["alt+j", "alt+s"], "command": "org_journal_search"},
 	{
@@ -12,4 +13,30 @@
 		"context": [{"key": "eol_selector", "operator": "equal", "operand": "text.orgmode"}],
 	},
 	{"keys": ["alt+`"], "command": "toggle_terminus_panel"},
+	{"keys": ["alt+n"], "command": "move", "args": {"by": "lines", "forward": true}},
+	{"keys": ["alt+p"], "command": "move", "args": {"by": "lines", "forward": false}},
+	{"keys": ["alt+f"], "command": "move", "args": {"by": "words", "forward": true}},
+	{"keys": ["alt+b"], "command": "move", "args": {"by": "words", "forward": false}},
+	{"keys": ["ctrl+alt+f"], "command": "move", "args": {"by": "characters", "forward": true}},
+	{"keys": ["ctrl+alt+b"], "command": "move", "args": {"by": "characters", "forward": false}},
+	{"keys": ["alt+o"], "command": "chain", "args": {
+		"commands": [
+			["move_to", {"extend": false, "to": "eol"}],
+			["insert", {"characters": "\n"}],
+		]
+	}},
+	{"keys": ["alt+shift+o"], "command": "chain", "args": {
+		"commands": [
+			["move_to", {"extend": false, "to": "bol"}],
+			["insert", {"characters": "\n"}],
+		]
+	}},
+	{"keys": ["alt+e"], "command": "move_to", "args": {"extend": false, "to": "eol"}},
+	{"keys": ["alt+a"], "command": "move_to", "args": {"extend": false, "to": "bol"}},
+	{"keys": ["alt+k"], "command": "chain", "args": {
+		"commands": [
+			["move_to", {"extend": true, "to": "eol"}],
+			["left_delete"]
+		]
+	}},
 ]
