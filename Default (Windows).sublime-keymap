@@ -1,5 +1,7 @@
 [
 	{"keys": ["ctrl+y"], "command": "undo"},  // make undo work on the German keyboard
+	{"keys": ["ctrl+alt+t"], "command": "open_file", "args": {"file": "C:/Users/btd/Documents/time.org"}},
+	{"keys": ["alt+i"], "command": "reindent"},
 	{"keys": ["ctrl+alt+j"], "command": "org_journal_open_today"},
 	{"keys": ["alt+j", "alt+s"], "command": "org_journal_search"},
 	{
@@ -31,6 +33,9 @@
 			["insert", {"characters": "\n"}],
 		]
 	}},
+	{"keys": ["alt+u"], "command": "upper_case"},
+	{"keys": ["alt+l"], "command": "lower_case"},
+	{"keys": ["alt+c"], "command": "title_case"},
 	{"keys": ["alt+e"], "command": "move_to", "args": {"extend": false, "to": "eol"}},
 	{"keys": ["alt+a"], "command": "move_to", "args": {"extend": false, "to": "bol"}},
 	{"keys": ["alt+k"], "command": "chain", "args": {

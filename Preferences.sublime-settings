@@ -15,4 +15,5 @@
 	"auto_match_enabled": false,
 	"trim_trailing_white_space_on_save": "all",
 	"default_line_ending": "unix",
+	"font_size": 11,
 }
